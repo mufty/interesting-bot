@@ -9,3 +9,4 @@ Discord bot
 - start a new branch for each feature
 - after you are done create a pull request to master
 - close your branch after it's pulled
+- use 2 spaces for tabs
