@@ -21,7 +21,8 @@ Development is done using git flow. Any new feature you build should be created 
 - close your branch after it's merged
 
 ## Development environment requirements
-
+| Framework      | Version     |
+| -------------- |:-----------:|
 | Node.js        |  **6.11.5** |
 | NPM            | **3.10.10** |
 | Firebase-tools |             |
