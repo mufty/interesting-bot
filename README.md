@@ -34,5 +34,5 @@ Firebase-tools
 4. go into the functions directory and run `npm install`
 
 *Optional:*
-5. If your IDE supports lint make it use `.eslintrc` to ensure code formatting
-6. If your IDE supports editor config use `.editorconfig` to keep the source code unified
+- If your IDE supports lint make it use `.eslintrc` to ensure code formatting
+- If your IDE supports editor config use `.editorconfig` to keep the source code unified
