@@ -22,9 +22,9 @@ Development is done using git flow. Any new feature you build should be created 
 
 ## Development environment requirements
 
-Node.js version: **6.11.5**
-NPM version: **3.10.10**
-Firebase-tools
+| Node.js        |  **6.11.5** |
+| NPM            | **3.10.10** |
+| Firebase-tools |             |
 
 ## Development environment setup
 *Required:*
