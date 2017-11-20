@@ -1,6 +1,6 @@
 # Interesting-bot
 
-Interesting Time guild - Discord bot
+Interesting Times guild - Discord bot
 
 ## Coding Rules
 
