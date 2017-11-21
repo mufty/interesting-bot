@@ -36,8 +36,8 @@ class Settings {
   /**
    * @static getSecret - finds value from secrets.json
    *
-   * @param  {type} path can be dot convention string
-   * @return {type}      found value or null
+   * @param  {string} path can be dot convention string
+   * @return {string}      found value or null
    */
   static getSecret(path) {
     return _getSetting(path, _loadedSecrets);
