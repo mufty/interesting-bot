@@ -12,11 +12,13 @@ class App {
   static run() {
     //init all adapters
     _.forEach(Settings.get('adapters'), (value, name) => {
-      var _instance = new adapters[value.type](name);
-      if(!_adapterInstances[name])
+      if(!_adapterInstances[name]) {
+        var _instance = new adapters[value.type](name);
+
         _adapterInstances[name] = _instance;
-      else
+      } else {
         throw "Adapter with name " + name + " already exists! To fix this try to keep the names unique.";
+      }
     });
   }
 
