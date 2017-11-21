@@ -7,8 +7,16 @@ const adapters = {
 
 var _adapterInstances = {};
 
+/**
+ * Main class to init the whole thing
+ */
 class App {
 
+  /**
+   * @static run - intialize all adapters
+   *
+   * @throws exception - when trying to initialize two adapters with the same name
+   */
   static run() {
     //init all adapters
     _.forEach(Settings.get('adapters'), (value, name) => {
@@ -22,6 +30,12 @@ class App {
     });
   }
 
+  /**
+   * @static getAdapter - return adapter instance
+   *
+   * @param  {type} name name of the adapter
+   * @return {object}    adapter instance
+   */
   static getAdapter(name) {
     return _adapterInstances[name];
   }
