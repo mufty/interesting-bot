@@ -20,6 +20,10 @@ class App {
     });
   }
 
+  static getAdapter(name) {
+    return _adapterInstances[name];
+  }
+
 }
 
 module.exports = App;
