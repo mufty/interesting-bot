@@ -19,21 +19,26 @@ var _getSetting = function(path, json){
   return _foundValue;
 };
 
+/**
+ * Setting handler to retrieve values
+ */
 class Settings {
   /**
-   * Example:
-   * "get.my.setting"
-   * returns: String of the value from settings or null when not found
-   **/
+   * @static get - finds value from settings.json
+   *
+   * @param  {string} path can be dot convention string
+   * @return {string}      found value or null
+   */
   static get(path) {
     return _getSetting(path, _loadedSettings);
   }
 
   /**
-   * Example:
-   * "get.my.secret"
-   * returns: String of the value from settings or null when not found
-   **/
+   * @static getSecret - finds value from secrets.json
+   *
+   * @param  {type} path can be dot convention string
+   * @return {type}      found value or null
+   */
   static getSecret(path) {
     return _getSetting(path, _loadedSecrets);
   }
