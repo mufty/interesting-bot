@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# firebase lock packages
+package-lock.json
+
+# DON'T SHARE PUBLIC TOKENS AND SECRETS
+secrets.json

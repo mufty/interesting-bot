@@ -1,0 +1,8 @@
+{
+  "adapters": {
+    "discordAdapter1": {
+      "type": "DiscordAdapter",
+      "botTokenPath": "discordAdapter1.botToken"
+    }
+  }
+}
