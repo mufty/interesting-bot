@@ -4,5 +4,8 @@
       "type": "DiscordAdapter",
       "botTokenPath": "discordAdapter1.botToken"
     }
+  },
+  "general": {
+    "command_prefix": "!"
   }
 }
