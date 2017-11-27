@@ -5,7 +5,7 @@ class Command {
 
   constructor(msg) {
     this._msg = msg;
-    this._program = require('../../lib/index');
+    this._program = require('../../lib/commander');
     this._program = this._program.version('0.0.2')
       .usage('[options]');
 
