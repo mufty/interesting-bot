@@ -20,7 +20,7 @@ class Command {
   _initProgram() {
     var _commandSettings = Settings.get('general.commands.' + this._name);
     if(!_commandSettings) {
-      console.log('There is not command in settings for: %s', this._name);
+      console.log('There is no command in settings for: %s', this._name);
       return;
     }
 
