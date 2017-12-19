@@ -1,9 +1,19 @@
 const Settings = require('../settings');
 const _ = require('lodash');
 const Command = require('./command');
+const Router = require('../resolver/router');
 
+/**
+ * Using commander library see: https://www.npmjs.com/package/commander
+ */
 class CommanderCommand extends Command {
 
+  /**
+   * constructor
+   *
+   * @param  {type} msg message object
+   * @return {type}     instance
+   */
   constructor(msg) {
     super(msg);
 
@@ -19,6 +29,9 @@ class CommanderCommand extends Command {
     this._initProgram();
   }
 
+  /**
+   * _initProgram - initialize commander library from settings
+   */
   _initProgram() {
     var _commandSettings = Settings.get('general.commands.' + this._name);
     if(!_commandSettings) {
@@ -29,6 +42,9 @@ class CommanderCommand extends Command {
     _.each(_commandSettings, o => this._program = this._program.option.apply(this._program, o));
   }
 
+  /**
+   * resolve message TODO
+   */
   resolve() {
     var args = this._msg.content.split(/('.*?'|".*?"|\S+)/);
     args.unshift('PLACE_HOLDER');
@@ -41,20 +57,17 @@ class CommanderCommand extends Command {
       }
     }
 
+    //do just reply directly for help messages
     this._program.on('--help', function() {
       this._msg.reply(this._program.helpInformation());
     }.bind(this));
 
     this._program.parse(args);
 
-    var _options = "";
-    var _allOptions = this._program.opts();
-    for(var p in _allOptions){
-      _options += p + "=" + _allOptions[p] + ' ';
-    }
-
-    this._msg.reply('Got command: ' + this._name + ' with arguments: ' + _options);
+    Router.route(this);
   }
+
+  get program () { return this._program }
 
 }
 
