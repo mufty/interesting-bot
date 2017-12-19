@@ -13,6 +13,7 @@ class Command {
     this._msg = msg;
   }
 
+  get msg () { return this._msg }
   get name () { return this._name }
   get prefix () { return this._prefix }
   set prefix (v) { this._prefix = v }
