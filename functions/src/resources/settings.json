@@ -4,5 +4,15 @@
       "type": "DiscordAdapter",
       "botTokenPath": "discordAdapter1.botToken"
     }
+  },
+  "general": {
+    "command_prefix": "!",
+    "commands": {
+      "eventCreate": [
+        ["-s, --start [value]", "Event start date"],
+        ["-e, --end [value]", "Event end date"],
+        ["-d, --description [value]", "Event description"]
+      ]
+    }
   }
 }

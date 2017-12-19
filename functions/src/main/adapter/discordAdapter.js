@@ -1,6 +1,7 @@
 const BaseAdapter = require('./baseAdapter');
 const Settings = require('../settings');
 const Discord = require('discord.js');
+const Command = require('../command/command');
 
 /**
  * Discord specific adapter
@@ -40,11 +41,11 @@ class DiscordAdapter extends BaseAdapter {
    * @param  {Message} msg incomming message from discord.js
    */
   _onMessage(msg) {
-    //TODO proper message handling
-    //ping pong for testing
-    if(msg.content === "ping") {
-      msg.reply('Pong!');
-    }
+    if(!Command.isCommand(msg))
+      return;
+
+    var _command = new Command(msg);
+    _command.resolve();
   }
 
 }
