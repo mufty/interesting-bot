@@ -1,6 +1,7 @@
 const BaseAdapter = require('./baseAdapter');
 const Settings = require('../settings');
 const Discord = require('discord.js');
+const CommanderCommand = require('../command/commanderCommand');
 const Command = require('../command/command');
 
 /**
@@ -44,7 +45,7 @@ class DiscordAdapter extends BaseAdapter {
     if(!Command.isCommand(msg))
       return;
 
-    var _command = new Command(msg);
+    var _command = new CommanderCommand(msg);
     _command.resolve();
   }
 
