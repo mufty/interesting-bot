@@ -4,6 +4,12 @@ const Command = require('./command');
 
 class CommanderCommand extends Command {
 
+  /**
+   * constructor
+   *
+   * @param  {type} msg message object
+   * @return {type}     instance
+   */
   constructor(msg) {
     super(msg);
 
@@ -19,6 +25,9 @@ class CommanderCommand extends Command {
     this._initProgram();
   }
 
+  /**
+   * _initProgram - initialize commander library from settings
+   */
   _initProgram() {
     var _commandSettings = Settings.get('general.commands.' + this._name);
     if(!_commandSettings) {
@@ -29,6 +38,9 @@ class CommanderCommand extends Command {
     _.each(_commandSettings, o => this._program = this._program.option.apply(this._program, o));
   }
 
+  /**
+   * resolve message TODO
+   */
   resolve() {
     var args = this._msg.content.split(/('.*?'|".*?"|\S+)/);
     args.unshift('PLACE_HOLDER');
