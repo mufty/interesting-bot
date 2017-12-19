@@ -49,6 +49,24 @@ class DiscordAdapter extends BaseAdapter {
     _command.resolve();
   }
 
+  /**
+   * resolve routed objects
+   *
+   * @param  {type} obj ussualy a command object
+   * @param  {type} opt options form router settings
+   */
+  resolve(obj, opt) {
+    if(opt.reply) {
+      var _options = "";
+      var _allOptions = obj.program.opts();
+      for(var p in _allOptions){
+        _options += p + "=" + _allOptions[p] + ' ';
+      }
+
+      obj.msg.reply('Got command: ' + obj.name + ' with arguments: ' + _options);
+    }
+  }
+
 }
 
 module.exports = DiscordAdapter;

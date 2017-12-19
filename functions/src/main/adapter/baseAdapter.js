@@ -16,6 +16,10 @@ class BaseAdapter {
     this.setting = Settings.get('adapters.' + name);
   }
 
+  resolve(obj, opt) {
+    //implement in child
+  }
+
 }
 
 module.exports = BaseAdapter;

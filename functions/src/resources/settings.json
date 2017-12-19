@@ -14,5 +14,13 @@
         ["-d, --description [value]", "Event description"]
       ]
     }
+  },
+  "router": {
+    "eventCreate":{
+      "adapter": "discordAdapter1",
+      "options": {
+        "reply": true
+      }
+    }
   }
 }
