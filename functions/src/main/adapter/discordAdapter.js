@@ -3,6 +3,7 @@ const Settings = require('../settings');
 const Discord = require('discord.js');
 const CommanderCommand = require('../command/commanderCommand');
 const Command = require('../command/command');
+const i18next = require('i18next');
 
 /**
  * Discord specific adapter
@@ -63,7 +64,7 @@ class DiscordAdapter extends BaseAdapter {
         _options += p + "=" + _allOptions[p] + ' ';
       }
 
-      obj.msg.reply('Got command: ' + obj.name + ' with arguments: ' + _options);
+      obj.msg.reply(i18next.t('got_command', {name: obj.name, options: _options}));
     }
   }
 
