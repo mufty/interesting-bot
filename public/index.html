@@ -1,65 +1,629 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.6.2/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.6.2/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.6.2/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.6.2/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.6.2/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+	<title>Homepage</title>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+	<!-- So many favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
+
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/responsive.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="js/jquery.1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.isotope.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script type="text/javascript" src="js/classie.js"></script>
+	<script src="contactform/contactform.js"></script>
+
+	<!-- =======================================================
+    Theme Name: Knight
+    Theme URL: https://bootstrapmade.com/knight-free-bootstrap-theme/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+	======================================================= -->
+
+</head>
+
+<body>
+	<header class="header" id="header">
+		<!--header-start-->
+		<div class="container">
+			<figure class="logo animated fadeInDown delay-07s">
+				<a href="#"><img src="img/logo.png" alt=""></a>
+			</figure>
+			<h1 class="animated fadeInDown delay-07s">Interesting Times</h1>
+			<ul class="we-create animated fadeInUp delay-1s">
+				<li>World of Warcraft Guild on Chamber of Aspects EU</li>
+			</ul>
+			<a class="link animated fadeInUp delay-1s servicelink" href="#service">More information</a>
+		</div>
+	</header>
+	<!--header-end-->
+
+	<nav class="main-nav-outer" id="test">
+		<!--main-nav-start-->
+		<div class="container">
+			<ul class="main-nav">
+				<li><a href="#header">Intro</a></li>
+				<li><a href="#service">About us</a></li>
+				<li><a href="#Portfolio">Raiding</a></li>
+				<li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
+				<li><a href="#client">Testimonials</a></li>
+				<li><a href="#team">Cheerleaders</a></li>
+				<li><a href="#contact">Recruitment</a></li>
+			</ul>
+			<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+		</div>
+	</nav>
+	<!--main-nav-end-->
+
+
+
+	<section class="main-section" id="service">
+		<!--main-section-start-->
+		<div class="container">
+			<h2>About us</h2>
+			<h6>Interesting Times is a World of Warcraft guild on the Horde side of Chamber of Aspects (EU) server</h6>
+			<h6>We're a casual "friends &amp; family"-type of guild. We're fairly serious about playing the game only for fun!</h6>
+
+			<div class="row">
+				<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
+					<div class="service-list">
+						<div class="service-list-col1">
+							<i class="fa-wheelchair-alt"></i>
+						</div>
+						<div class="service-list-col2">
+							<h3>Mature (more like old)</h3>
+							<p>We have a core group of older, laid back players with experience. Real life always comes first and bring the player not the class</p>
+						</div>
+					</div>
+					<div class="service-list">
+						<div class="service-list-col1">
+							<i class="fa-area-chart"></i>
+						</div>
+						<div class="service-list-col2">
+							<h3>Raiding ethos</h3>
+							<p>Our ethos can be summed up as ‘Respectful Raiding’. Embrace the wipes and disenchant your ego. We always use <span title="Not that any loot ever drops but you know...">personal loot</span> and share surplus gear.</p>
+						</div>
+					</div>
+					<div class="service-list">
+						<div class="service-list-col1">
+							<i class="fa-trophy"></i>
+						</div>
+						<div class="service-list-col2">
+							<h3>Social events</h3>
+							<p>Aside from raiding we also host other events for pet battles, treasure hunts and of course the infamous death race!</p>
+						</div>
+					</div>
+					<div class="service-list">
+						<div class="service-list-col1">
+							<i class="fa-medkit"></i>
+						</div>
+						<div class="service-list-col2">
+							<h3>Other games</h3>
+							<p>We also have a steam group setup and we dabble with board games. At the very least we talk a lot about other games and books.</p>
+						</div>
+					</div>
+				</div>
+				<figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
+					<img src="img/wow_logos.png" alt="">
+				</figure>
+
+			</div>
+		</div>
+	</section>
+	<!--main-section-end-->
+
+
+
+	<section class="main-section alabaster">
+		<!--main-section alabaster-start-->
+		<div class="container">
+			<div class="row">
+				<figure class="col-lg-5 col-sm-4 wow fadeInLeft">
+					<img src="img/discord-logo.png" alt="">
+				</figure>
+				<div class="col-lg-7 col-sm-8 featured-work">
+					<h2>Guild discord</h2>
+					<P class="padding-b">We use our Discord server as our main means of communication.</P>
+					<div class="featured-box">
+						<div class="featured-box-col1 wow fadeInRight delay-02s">
+							<i class="fa-headphones"></i>
+						</div>
+						<div class="featured-box-col2 wow fadeInRight delay-02s">
+							<h3>Voice communication</h3>
+							<p>We use Discord for both raid communication, mythic+ groups and casual banter</p>
+						</div>
+					</div>
+					<div class="featured-box">
+						<div class="featured-box-col1 wow fadeInRight delay-04s">
+							<i class="fa-comments"></i>
+						</div>
+						<div class="featured-box-col2 wow fadeInRight delay-04s">
+							<h3>Chat and news</h3>
+							<p>We have various channels setup for automated news collection, guild notices, arraning dungeons and so forth</p>
+						</div>
+					</div>
+					<div class="featured-box">
+						<div class="featured-box-col1 wow fadeInRight delay-06s">
+							<i class="fa-calendar"></i>
+						</div>
+						<div class="featured-box-col2 wow fadeInRight delay-06s">
+							<h3>Events</h3>
+							<p>We organise events using both the in-game calendar and discord. Last minute updates will always be here</p>
+						</div>
+					</div>
+					<a class="Learn-More" href="#">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--main-section alabaster-end-->
+
+
+
+	<section class="main-section paddind" id="Portfolio">
+		<!--main-section-start-->
+		<div class="container">
+			<h2>Raiding</h2>
+			<h6>Below is our collection of ego stroking raid kill shots.<h6>
+			<h6>Honestly, we don't take these too seriously. We only collect heroic kills and we have <strong>no intention to do mythic</strong></h6>
+
+			<div class="portfolioFilter">
+				<ul class="Portfolio-nav wow fadeIn delay-02s">
+					<li><a href="#" data-filter="*" class="current">All</a></li>
+					<li><a href="#" data-filter=".antorus">Antorus, The Burning Throne</a></li>
+					<li><a href="#" data-filter=".tomb">Tomb of Sargerus</a></li>
+					<li><a href="#" data-filter=".nighthold">Nighthold</a></li>
+					<li><a href="#" data-filter=".social">Social</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="portfolioContainer wow fadeInUp delay-04s">
+			<!-- Antorus -->
+			<div class=" Portfolio-box antorus">
+				<a href="img/portfolio/20180114 - varimathras.png"><img src="img/portfolio/20180114 - varimathras.png" alt=""></a>
+				<h3>Varimathras</h3>
+				<p>14th of Januari 2018</p>
+			</div>
+			<div class=" Portfolio-box antorus">
+				<a href="img/portfolio/20180114 - Kingaroth.png"><img src="img/portfolio/20180114 - Kingaroth.png" alt=""></a>
+				<h3>Kingaroth</h3>
+				<p>14th of Januari 2018</p>
+			</div>
+			<div class=" Portfolio-box antorus">
+				<a href="img/portfolio/20180107 - Portal keeper.png"><img src="img/portfolio/20180107 - Portal keeper.png" alt=""></a>
+				<h3>Portal Keeper</h3>
+				<p>7th of Januari 2018</p>
+			</div>
+			<div class=" Portfolio-box antorus">
+				<a href="img/portfolio/20180107 - Iomonar.png"><img src="img/portfolio/20180107 - Iomonar.png" alt=""></a>
+				<h3>Portal Keeper</h3>
+				<p>7th of Januari 2018</p>
+			</div>
+			<div class=" Portfolio-box antorus">
+				<a href="img/portfolio/20180107 - High command.png"><img src="img/portfolio/20180107 - High command.png" alt=""></a>
+				<h3>Antorus High command</h3>
+				<p>7th of Januari 2018</p>
+			</div>
+			<div class=" Portfolio-box antorus">
+				<a href="img/portfolio/20180103 - Eonar.png"><img src="img/portfolio/20180103 - Eonar.png" alt=""></a>
+				<h3>Eonar the Lifebinder</h3>
+				<p>3rd of Januari 2018</p>
+			</div>
+			<div class=" Portfolio-box antorus">
+				<a href="img/portfolio/20171210 - Felhounds.png"><img src="img/portfolio/20171210 - Felhounds.png" alt=""></a>
+				<h3>Fellhounds of Sargerus</h3>
+				<p>10th of December 2017</p>
+			</div>
+			<div class=" Portfolio-box antorus">
+				<a href="img/portfolio/20171210 - Worldbreaker.png"><img src="img/portfolio/20171210 - Worldbreaker.png" alt=""></a>
+				<h3>Garothi Worldbreaker</h3>
+				<p>10th of December 2017</p>
+			</div>
+
+			<!-- tomb -->
+			<div class=" Portfolio-box tomb">
+				<a href="img/portfolio/20171015 - Kiljaeden.png"><img src="img/portfolio/20171015 - Kiljaeden.png" alt=""></a>
+				<h3>Kil'Jaeden</h3>
+				<p>15th of October 2017</p>
+			</div>
+			<div class=" Portfolio-box tomb">
+				<a href="img/portfolio/20170917 - Fallen avatar.png"><img src="img/portfolio/20170917 - Fallen avatar.png" alt=""></a>
+				<h3>Fallen Avatar</h3>
+				<p>17th of September 2017</p>
+			</div>
+			<div class=" Portfolio-box tomb">
+				<a href="img/portfolio/20170813 - Maiden.png"><img src="img/portfolio/20170813 - Maiden.png" alt=""></a>
+				<h3>Maiden of Vigilance</h3>
+				<p>13th of August 2017</p>
+			</div>
+			<div class=" Portfolio-box tomb">
+					<a href="img/portfolio/20170809 - Desolate host.png"><img src="img/portfolio/20170809 - Desolate host.png" alt=""></a>
+					<h3>Desolate Host</h3>
+					<p>9th of August 2017</p>
+			</div>
+			<div class=" Portfolio-box tomb">
+					<a href="img/portfolio/20170809 - Mistress.png"><img src="img/portfolio/20170809 - Mistress.png" alt=""></a>
+					<h3>Mistress Sassz'ine</h3>
+					<p>9th of August 2017</p>
+			</div>
+			<div class=" Portfolio-box tomb">
+					<a href="img/portfolio/20170716 - Sisters.png"><img src="img/portfolio/20170716 - Sisters.png" alt=""></a>
+					<h3>Sisters of the Moon</h3>
+					<p>16th of Juli 2017</p>
+			</div>
+			<div class=" Portfolio-box tomb">
+					<a href="img/portfolio/20170712 - Harjatan.png"><img src="img/portfolio/20170712 - Harjatan.png" alt=""></a>
+					<h3>Harjatan</h3>
+					<p>12th of Juli 2017</p>
+			</div>
+			<div class=" Portfolio-box tomb">
+					<a href="img/portfolio/20170709 - Inquisition.jpg"><img src="img/portfolio/20170709 - Inquisition.jpg" alt=""></a>
+					<h3>Demonic Inquisition</h3>
+					<p>9th of Juli 2017</p>
+			</div>
+			<div class=" Portfolio-box tomb">
+					<a href="img/portfolio/20170709 - Goroth.jpg"><img src="img/portfolio/20170709 - Goroth.jpg" alt=""></a>
+					<h3>Goroth</h3>
+					<p>9th of Juli 2017</p>
+			</div>
+
+			<!-- Nighthold -->
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170519 - Guldan.png"><img src="img/portfolio/20170519 - Guldan.png" alt=""></a>
+					<h3>Gul'dan</h3>
+					<p>19th of April 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170516 - Elisande.png"><img src="img/portfolio/20170516 - Elisande.png" alt=""></a>
+					<h3>Grand Magistrix Elisande</h3>
+					<p>16th of April 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170512 - Botanist.png"><img src="img/portfolio/20170512 - Botanist.png" alt=""></a>
+					<h3>High Botanist Tel'Arn</h3>
+					<p>12th of April 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170505 - Star augur.png"><img src="img/portfolio/20170505 - Star augur.png" alt=""></a>
+					<h3>Star Augur Etraeus</h3>
+					<p>5th of April 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170505 - Tichondrius.png"><img src="img/portfolio/20170505 - Tichondrius.png" alt=""></a>
+					<h3>Tichondrius</h3>
+					<p>5th of April 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170226 - Krosus.png"><img src="img/portfolio/20170226 - Krosus.png" alt=""></a>
+					<h3>Krosus</h3>
+					<p>26th of Februari 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170312 - Spellblade.png"><img src="img/portfolio/20170312 - Spellblade.png" alt=""></a>
+					<h3>Spellblade Aluriel</h3>
+					<p>12th of March 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170208 - Trilliax.png"><img src="img/portfolio/20170208 - Trilliax.png" alt=""></a>
+					<h3>Trilliax</h3>
+					<p>8th of Februari 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170208 - Chrono.png"><img src="img/portfolio/20170208 - Chrono.png" alt=""></a>
+					<h3>Chronomatic Anomaly</h3>
+					<p>8th of Februari 2017</p>
+			</div>
+			<div class=" Portfolio-box nighthold">
+					<a href="img/portfolio/20170208 - Skorpyron.png"><img src="img/portfolio/20170208 - Skorpyron.png" alt=""></a>
+					<h3>Skorpyron</h3>
+					<p>8th of Februari 2017</p>
+			</div>
+
+			<!-- Social -->
+			<div class=" Portfolio-box social">
+					<a href="img/portfolio/20161225 - Petbattle.jpg"><img src="img/portfolio/20161225 - Petbattle.jpg" alt=""></a>
+					<h3>Pet battle</h3>
+					<p>2016 Tournament</p>
+			</div>
+		</div>
+	</section>
+	<!--main-section-end-->
+
+
+	<section class="main-section client-part" id="client">
+		<!--main-section client-part-start-->
+		<div class="container">
+			<b class="quote-right wow fadeInDown delay-03"><i class="fa-quote-right"></i></b>
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="client-part-haead wow fadeInDown delay-05">Few understood my use of the Naga but these guys did. It's soup.....Naga soup.</p>
+				</div>
+			</div>
+			<ul class="client wow fadeIn delay-05s">
+				<li><a href="#">
+            	<img src="img/client-pic1.jpg" alt="">
+                <h3>Illidan Stormrage</h3>
+                <span>Legion poster boy</span>
+            </a></li>
+			</ul>
+		</div>
+	</section>
+	<!--main-section client-part-end-->
+	<div class="c-logo-part">
+		<!--c-logo-part-start-->
+		<div class="container">
+			<!-- <ul>
+				<li><a href="#"><img src="img/c-liogo1.png" alt=""></a></li>
+				<li><a href="#"><img src="img/c-liogo2.png" alt=""></a></li>
+				<li><a href="#"><img src="img/c-liogo3.png" alt=""></a></li>
+				<li><a href="#"><img src="img/c-liogo4.png" alt=""></a></li>
+				<li><a href="#"><img src="img/c-liogo5.png" alt=""></a></li>
+			</ul> -->
+		</div>
+	</div>
+	<!--c-logo-part-end-->
+	<section class="main-section team" id="team">
+		<!--main-section team-start-->
+		<div class="container">
+			<h2>cheerleaders</h2>
+			<h6>This is an example of whats been said about our guild and our raiding antics</h6>
+			<div class="team-leader-block clearfix">
+				<div class="team-leader-box">
+					<div class="team-leader wow fadeInDown delay-03s">
+						<div class="team-leader-shadow"><a href="#"></a></div>
+						<img src="img/team-leader-pic1.jpg" alt="">
+						<!-- <ul>
+							<li><a href="#" class="fa-twitter"></a></li>
+							<li><a href="#" class="fa-facebook"></a></li>
+							<li><a href="#" class="fa-pinterest"></a></li>
+							<li><a href="#" class="fa-google-plus"></a></li>
+						</ul> -->
+					</div>
+					<h3 class="wow fadeInDown delay-03s">Khadgar</h3>
+					<span class="wow fadeInDown delay-03s">Dad joke generator</span>
+					<p class="wow fadeInDown delay-03s">10/10 Would watch these guys clear the raid for me again and again</p>
+				</div>
+				<div class="team-leader-box">
+					<div class="team-leader  wow fadeInDown delay-06s">
+						<div class="team-leader-shadow"><a href="#"></a></div>
+						<img src="img/team-leader-pic2.jpg" alt="">
+						<!-- <ul>
+							<li><a href="#" class="fa-twitter"></a></li>
+							<li><a href="#" class="fa-facebook"></a></li>
+							<li><a href="#" class="fa-pinterest"></a></li>
+							<li><a href="#" class="fa-google-plus"></a></li>
+						</ul> -->
+					</div>
+					<h3 class="wow fadeInDown delay-06s">The Coven of Shivarra</h3>
+					<span class="wow fadeInDown delay-06s">Leather thong specialists</span>
+					<p class="wow fadeInDown delay-06s">That sexy paladin of theirs can come tank and spank us anytime</p>
+				</div>
+				<div class="team-leader-box">
+					<div class="team-leader wow fadeInDown delay-09s">
+						<div class="team-leader-shadow"><a href="#"></a></div>
+						<img src="img/team-leader-pic3.jpg" alt="">
+						<!-- <ul>
+							<li><a href="#" class="fa-twitter"></a></li>
+							<li><a href="#" class="fa-facebook"></a></li>
+							<li><a href="#" class="fa-pinterest"></a></li>
+							<li><a href="#" class="fa-google-plus"></a></li>
+						</ul> -->
+					</div>
+					<h3 class="wow fadeInDown delay-09s">Interesting Murloc</h3>
+					<span class="wow fadeInDown delay-09s">Office mascot</span>
+					<p class="wow fadeInDown delay-09s">Mglrmglmglmgl Mmmm Mmmm mrrrggk. Mrrrgll, Mrgllll glrrm gl!</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--main-section team-end-->
+
+
+
+	<section class="business-talking">
+		<!--business-talking-start-->
+		<div class="container">
+			<h2>May you live in Interesting Times!</h2>
+		</div>
+	</section>
+	<!--business-talking-end-->
+	<div class="container">
+		<section class="main-section contact" id="contact">
+
+			<div class="row">
+				<div class="col-lg-6 col-sm-7 wow fadeInLeft">
+					<div class="contact-info-box address clearfix">
+						<h3><i class=" icon-map-marker"></i>Address:</h3>
+						<span>Chamber of Aspects EU</span>
+					</div>
+					<div class="contact-info-box phone clearfix">
+						<h3><i class="fa-phone"></i>Contact:</h3>
+						<span>/join ITRecruitment</span>
+					</div>
+					<!-- <div class="contact-info-box email clearfix">
+						<h3><i class="fa-pencil"></i>email:</h3>
+						<span>info@interesting-times.com</span>
+					</div> -->
+					<div class="contact-info-box hours clearfix">
+						<h3><i class="fa-clock-o"></i>Raiding:</h3>
+						<span><strong>Wednesday:</strong> 20:30 - 23:00 Server time<br><strong>Sunday:</strong> 20:30 - 23:00 Server time<br><strong>Mid-raid break:</strong> 30 minutes around 21:30/22:00</span>
+					</div>
+					<!-- <ul class="social-link">
+						<li class="twitter"><a href="#"><i class="fa-twitter"></i></a></li>
+						<li class="facebook"><a href="#"><i class="fa-facebook"></i></a></li>
+						<li class="pinterest"><a href="#"><i class="fa-pinterest"></i></a></li>
+						<li class="gplus"><a href="#"><i class="fa-google-plus"></i></a></li>
+						<li class="dribbble"><a href="#"><i class="fa-dribbble"></i></a></li>
+					</ul> -->
+				</div>
+				<div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
+					<div class="form">
+
+						<div id="sendmessage">Your application has been sent. Thank you!</div>
+						<div id="errormessage"></div>
+						<form action="" method="post" role="form" class="contactForm">
+							<div class="form-group">
+								<input type="text" name="name" class="form-control input-text" id="char_name" placeholder="Your character name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+								<div class="validation"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" name="name" class="form-control input-text" id="real_name" placeholder="Your first name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+								<div class="validation"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control input-text" name="interest" id="interest" placeholder="Interested in: Social, raiding, (mythic) dungeons, etc." data-rule="minlen:4" data-msg="Please enter at least 4 chars of interests" />
+								<div class="validation"></div>
+							</div>
+							<div class="form-group">
+								<textarea class="form-control input-text text-area" name="message" rows="5" data-rule="required" data-msg="Please tell us why you would be fun to have in the guild" placeholder="Please tell use about yourself, why you want to join, what you expect of us and what we can expect of you"></textarea>
+								<div class="validation"></div>
+							</div>
+
+							<div class="text-center"><button type="submit" class="input-btn">Apply now</button></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-logo"><a href="#"><img src="img/footer-logo.png" alt=""></a></div>
+			<span class="copyright">&copy; Interesting Times. All Rights Reserved</span>
+			<div class="credits">
+				<!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Knight
+        -->
+				<a href="https://bootstrapmade.com/bootstrap-agency-templates/">Bootstrap Agency Templates</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(e) {
+			$('#test').scrollToFixed();
+			$('.res-nav_click').click(function() {
+				$('.main-nav').slideToggle();
+				return false
+
+			});
+
+		});
+	</script>
+
+	<script>
+		wow = new WOW({
+			animateClass: 'animated',
+			offset: 100
+		});
+		wow.init();
+	</script>
+
+
+	<script type="text/javascript">
+		$(window).load(function() {
+
+			$('.main-nav li a, .servicelink').bind('click', function(event) {
+				var $anchor = $(this);
+
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top - 102
+				}, 1500, 'easeInOutExpo');
+				/*
+				if you don't want to use the easing effects:
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top
+				}, 1000);
+				*/
+				if ($(window).width() < 768) {
+					$('.main-nav').hide();
+				}
+				event.preventDefault();
+			});
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(window).load(function() {
+
+
+			var $container = $('.portfolioContainer'),
+				$body = $('body'),
+				colW = 375,
+				columns = null;
+
+
+			$container.isotope({
+				// disable window resizing
+				resizable: true,
+				masonry: {
+					columnWidth: colW
+				}
+			});
+
+			$(window).smartresize(function() {
+				// check if columns has changed
+				var currentColumns = Math.floor(($body.width() - 30) / colW);
+				if (currentColumns !== columns) {
+					// set new column count
+					columns = currentColumns;
+					// apply width to container manually, then trigger relayout
+					$container.width(columns * colW)
+						.isotope('reLayout');
+				}
+
+			}).smartresize(); // trigger resize to set container width
+			$('.portfolioFilter a').click(function() {
+				$('.portfolioFilter .current').removeClass('current');
+				$(this).addClass('current');
+
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
+
+					filter: selector,
+				});
+				return false;
+			});
+
+		});
+	</script>
+
+</body>
+
 </html>
