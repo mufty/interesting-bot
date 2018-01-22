@@ -1,0 +1,1 @@
+Generated thumbnails go here
