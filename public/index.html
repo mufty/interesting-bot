@@ -200,8 +200,8 @@
 
 			<div class="portfolioFilter">
 				<ul class="Portfolio-nav wow fadeIn delay-02s">
-					<li><a href="#" data-filter="*" class="current">All</a></li>
-					<li><a href="#" data-filter=".antorus">Antorus, The Burning Throne</a></li>
+					<li><a href="#" data-filter="*">All</a></li>
+					<li><a href="#" data-filter=".antorus" class="current">Antorus, The Burning Throne</a></li>
 					<li><a href="#" data-filter=".tomb">Tomb of Sargerus</a></li>
 					<li><a href="#" data-filter=".nighthold">Nighthold</a></li>
 					<li><a href="#" data-filter=".social">Social</a></li>
@@ -621,7 +621,8 @@
 						.isotope('reLayout');
 				}
 
-			}).smartresize(); // trigger resize to set container width
+      }).smartresize(); // trigger resize to set container width
+
 			$('.portfolioFilter a').click(function() {
 				$('.portfolioFilter .current').removeClass('current');
 				$(this).addClass('current');
@@ -632,7 +633,17 @@
 					filter: selector,
 				});
 				return false;
-			});
+      });
+
+      // Apply the default filter
+      //
+      var startupFilter = $('.portfolioFilter .current');
+      var selector = startupFilter.attr('data-filter');
+				$container.isotope({
+
+					filter: selector,
+				});
+
 
 		});
 	</script>
